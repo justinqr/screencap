@@ -977,6 +977,8 @@ void write_fb_to_raw_bmp(uint8_t *fb_addr, int width, int height, int bpp)
     fwrite((uint8_t *)tmp0, bi.biSizeImage, 1, fp1);
     printf("%s: write size %d ==> %s OK\n\n", __func__, bi.biSizeImage+54, bmpname);
 
+    free(tmp0);
+    free(tmp1);
     fclose(fp0);
     fclose(fp1);
 }
